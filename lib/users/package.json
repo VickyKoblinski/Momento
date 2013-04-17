@@ -1,0 +1,7 @@
+{
+    "name"     : "users",
+    "version" : "0.0.1",
+    "author"   : "Vicky Koblinski <vkoblins@stumail.umass.edu>",
+    "description" : "library for accessing users",
+    "main": "./users.js"
+}
