@@ -1,0 +1,38 @@
+<% include template/headerNotLoggedIn.ejs %>
+<title><%= title %> Registration</title>
+
+<b><font color="red"><%= error %></font></b>
+<form name="login" method="post" id="auth-reg" action="/auth-reg">
+
+    <table border="0">
+        <tr>
+            <th>Username:</th>
+            <th><input type="text" name="username"/></th>
+        </tr>
+        <tr>
+            <th>First Name:</th>
+            <th><input type="text" name="firstname"/>    </th>
+        </tr>
+        <tr>
+            <th>Last Name:</th>
+            <th><input type="text" name="lastname"/></th>
+        </tr>
+        <tr>
+            <th>Email:</th>
+            <th><input type="text" name="email"/></th>
+        </tr>
+        <tr>
+            <th>Password: </th>
+            <th><input type="password" name="password1"/></th>
+        </tr>
+        <tr>
+            <th>Retype Password:         </th>
+            <th><input type="password" name="password2"/>  </th>
+        </tr>
+    </table>
+<input type="submit" value="Submit">
+<input type="reset" value="Cancel" />
+</form>
+
+<% include template/footer.ejs %>
+

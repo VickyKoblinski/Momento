@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title><%= title %></title>
-        <link rel='stylesheet' href='/stylesheets/style.css' />
-    </head>
-    <body>
-        <h1><%= title %></h1>
-        <p>Welcome to <%= title %></p>
-    </body>
-</html>
+<% include template/header.ejs %>
+<title><%= title %> Post</title>
+
+<table border="1">
+    <%
+    var length = posts.length;
+    if(posts.length > 10){
+        length = 10;
+    }
+    for(var i = 0; i<length; i++){
+    %>
+    <tr><td>
+        <%= posts[i].msg %>
+        <br />
+        <%= posts[i].poster%>
+        <br />
+        <%= posts[i].date %>
+    </td></tr>
+
+    <% }; %>
+
+</table>
+
+
+
+
+<% include template/footer.ejs %>

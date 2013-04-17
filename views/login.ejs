@@ -1,0 +1,13 @@
+<% include template/headerNotLoggedIn.ejs %>
+<title><%= title %> Login</title>
+
+<b><font color="red"><%= error %></font></b>
+<form name="login" method="post" id="authenticate" action="/authenticate">
+    Username: <input type="text" name="username"/>    <br>
+    Password: <input type="password" name="password"/>  <br>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Cancel" />
+</form>
+
+
+<% include template/footer.ejs %>
