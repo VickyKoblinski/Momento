@@ -1,10 +1,12 @@
 <% include template/header.ejs %>
-<title><%= title %> Post</title>
+<title><%= title %></title>
 
 
 <table class='myTable'>
     <tr><td><% include template/profile.ejs %></td>
-    <td><% include template/memos.ejs %></td></tr>
+    <td><% include template/post.ejs %>
+        <br />
+        <% include template/memos.ejs %></td></tr>
 </table>
 
 

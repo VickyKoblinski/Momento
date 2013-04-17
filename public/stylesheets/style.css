@@ -1,12 +1,31 @@
 body {
-    padding: 50px;,
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 25px 50px;
+    font: 12px Verdana, Geneva, sans-serif;
+    color:#033E6B;
 }
 
 a {
-    color: #00B7FF;
+    color: #0B61A4;
 }
+
+h1 {
+    /*font-size:40px;*/
+    font: 40px Georgia;
+}
+
+h2 {
+    /*color: #A65F00;*/
+    /*font-size:30px;*/
+    font:30px Georgia;
+}
+
+h3 {
+    /*color: #A65F00;*/
+    /*font-size:20px;*/
+    font:20px Georgia;
+}
+
 
 .myTable { background-color:#FFFFE0;border-collapse:collapse; }
 .myTable th { background-color:#BDB76B;color:white; }
-.myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; }
+.myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; vertical-align:top }
