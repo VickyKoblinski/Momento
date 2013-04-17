@@ -8,7 +8,8 @@ var express = require('express')
     , path = require('path')
     , auth = require('./routes/local-session')
     , reg = require('./routes/register')
-    , post = require('./routes/posting');
+    , post = require('./routes/posting')
+    , userPage = require('./routes/userPage');
 
 var app = express();
 
@@ -37,6 +38,7 @@ app.get('/register', routes.reg);
 app.get('/post', routes.post);
 
 
+app.get('/:user',userPage.userPage);
 
 
 app.post('/authenticate', auth.auth);

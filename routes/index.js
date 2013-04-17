@@ -9,11 +9,22 @@ var error = '';
 exports.index = function(req, res){
 
     if(req.session.user !== undefined){
-        var posts = userlib.getMemos(req.session.user);
+        var posts = userlib.getMemos(req.session.user,req);
+
+        var u = userlib.findUser(req.session.user);
+
 
         res.render('index', {
                                 title: "Memento",
-                                posts: posts
+                                posts: posts,
+                                username: u.username,
+                                fname: u.firstname,
+                                lname: u.lastname,
+                                email: u.email,
+                                nMemos: u.memos.length,
+                                nFollowers: u.followers.length,
+                                nFollowing: u.following.length,
+                                sessionHolder:true
                             });
 
 

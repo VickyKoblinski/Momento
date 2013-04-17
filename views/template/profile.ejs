@@ -1,0 +1,23 @@
+
+<title><% username %></title>
+
+<%= username %><br />
+<%= fname %> <%= lname %><br />
+<%= email %><br />
+<table>
+    <tr>
+        <th>Memos</th>
+        <th>Followers</th>
+        <th>Following</th>
+    </tr>
+    <tr>
+        <td><%= nMemos %></td>
+        <td><%= nFollowers %></td>
+        <td><%= nFollowing %></td>
+    </tr>
+
+</table>
+
+<% if(!sessionHolder){ %>
+        Follow me!
+<% } %>
