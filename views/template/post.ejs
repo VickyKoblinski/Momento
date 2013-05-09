@@ -26,6 +26,7 @@ function postdata()
             var msg = obj.msg;
             var date = obj.date;
 
+            $(".outer").last().slideUp(800, function() { $(this).remove(); });
 
             $("div#memo").prepend('<div class="outer"><div class="inner">' +
                     '<a href=' + usr + '>'+
@@ -35,7 +36,7 @@ function postdata()
                     '<font size=1>'+date+'</font></div>');
             $(".outer").first().hide().slideDown(800);
 
-            $(".outer").last().slideUp(800, function() { $(this).remove(); });
+
             $('textarea').val('');
 
             //inc post count
