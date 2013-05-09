@@ -7,26 +7,28 @@ var error = '';
 
 // ## Pages Viewable when Logged In
 exports.index = function(req, res){
+    var user = req.session.user;
 
-    if(req.session.user !== undefined){
-        var posts = userlib.getMemos(req.session.user,req);
-
-        var u = userlib.findUser(req.session.user);
+    if(user !== undefined){
 
 
-        res.render('index', {
-                                title: "Memento",
-                                posts: posts,
-                                username: u.username,
-                                fname: u.firstname,
-                                lname: u.lastname,
-                                email: u.email,
-                                nMemos: u.memos.length,
-                                nFollowers: u.followers.length,
-                                nFollowing: u.following.length,
-                                sessionHolder:true
-                            });
-
+        userlib.getMemos(user,function(posts){
+            userlib.findUser(user, function(u){
+                res.render('index', {
+                    title: "Memento",
+                    posts: posts,
+                    username: u.uname,
+                    fname: u.fname,
+                    lname: u.lname,
+                    email: u.email,
+                    nMemos: u.memos,
+                    nFollowers: u.followers,
+                    nFollowing: u.following,
+                    sessionHolder: req.session.user,
+                    following: false
+                });
+            });
+        });
 
     } else {
         res.redirect('/login');

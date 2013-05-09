@@ -1,0 +1,22 @@
+<% include template/header.ejs %>
+<title><%= title %></title>
+
+
+<table class='myTable'>
+<tr><td>
+    <h2><%= subtitle %><br /></h2>
+    <hr class="style-two"> </hr>
+    <%for(var i = 0; i<follow.length; i++){%>
+        <ul>
+            <li><h3><a href='/<%=follow[i].uname %>'><%=follow[i].uname%></a></h3></li>
+        </ul>
+    <%}%>
+
+
+</td></tr>
+</table>
+
+
+
+
+<% include template/footer.ejs %>

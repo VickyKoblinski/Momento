@@ -1,19 +1,71 @@
-<table border="1">
-    <%
-    var length = posts.length;
-    if(posts.length > 10){
-    length = 10;
+<script type="text/javascript"
+        src="http://code.jquery.com/jquery-1.7.1.min.js">
+</script>
+
+
+
+
+
+<div id='memo'>
+
+
+<%
+var length = posts.length;
+if(posts.length > 10){
+length = 10;
+}
+for(var i = 0; i<length; i++){
+%>
+
+
+
+
+<div id='memo<%=i%>' class="outer"">
+    <div class='inner'>
+        <a class='bg' id=n<%=i%> href=<%= posts[i].poster%>>
+            <div  id='fbox' class='user'>
+                <%= posts[i].poster%>
+            </div></a>
+    </div>
+    <%= posts[i].msg %>
+
+
+<br />      <br />
+<font size=1><%= posts[i].date %></font>
+</div>
+<% }; %>
+
+
+<div>
+
+
+
+
+
+<script>
+    var length = <%=posts.length%>;
+
+    if(length > 10){
+        length = 10;
     }
-    for(var i = 0; i<length; i++){
-    %>
-    <tr><td>
-        <%= posts[i].msg %>
-        <br />
-        <a id="home" href=<%= posts[i].poster%>><%= posts[i].poster%></a>
-        <br />
-        <%= posts[i].date %>
-    </td></tr>
 
-    <% }; %>
+//    $("table#memo tr").hide();
 
-</table>
+    for(var j = 0; j<length; j++){
+        $("div#memo"+(length-1-j)).hide().delay(j*200).slideDown(800);
+    }
+
+
+
+
+    $('div#fbox').hover(function(){
+        $(this).removeClass('user');
+        $(this).addClass('user2');
+    }, function(){
+        $(this).removeClass('user2');
+        $(this).addClass('user');
+    })
+
+
+
+</script>

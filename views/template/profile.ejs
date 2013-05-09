@@ -6,18 +6,25 @@
 <%= email %></h3><br />
 <table>
     <tr>
-        <th>Memos</th>
-        <th>Followers</th>
-        <th>Following</th>
+        <th><a href='/memos/<%=username%>'>Memos</a></th>
+        <th><a href='/followers/<%=username%>'>Followers</a></th>
+        <th><a href='/following/<%=username%>'>Following</a></th>
     </tr>
     <tr>
-        <td><%= nMemos %></td>
+        <td><div id='myMemos'><%= nMemos %></div></td>
         <td><%= nFollowers %></td>
         <td><%= nFollowing %></td>
     </tr>
 
 </table>
 
-<% if(!sessionHolder){ %>
-        Follow me!
-<% } %>
+
+<center>
+<%if(sessionHolder != username){
+        if(following){ %>
+            <a href='/unfollow/<%=username%>'>Unfollow</a>
+        <% } else { %>
+            <a href='/follow/<%=username%>'>Follow</a>
+    <%}
+}%>
+</center>

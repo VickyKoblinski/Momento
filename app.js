@@ -11,6 +11,8 @@ var express = require('express')
     , post = require('./routes/posting')
     , userPage = require('./routes/userPage');
 
+
+
 var app = express();
 
 app.configure(function(){
@@ -38,11 +40,26 @@ app.get('/register', routes.reg);
 
 
 app.get('/:user',userPage.userPage);
+app.get('/memos/:user',userPage.memos);
+app.get('/followers/:user',userPage.followers);
+app.get('/following/:user',userPage.following);
+
+
+app.get('/follow/:user',userPage.follow);
+app.get('/unfollow/:user',userPage.unfollow);
 
 
 app.post('/authenticate', auth.auth);
 app.post('/auth-reg', reg.reg);
 app.post('/posting',post.post);
+
+
+
+
+
+
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));

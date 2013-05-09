@@ -12,18 +12,12 @@ Memento
 * Log out
 * View the most recent 10 memos made by yourself or your followers on your homepage
 * View the most recent 10 memos made by a user and their followers on their page (example: /user2 )
+* View the most recent 10 memos made by an individual
 * Post a new memo
 * Displays # of followers, memos, and followings associated with you
+* View list of a user's followers
+* View list of a user's follow-ings
+* Ajax implementation for dynamic post loading when making a new post (and updating the counter that displays how many posts you've made)
+* jQuery asetic additions
+* Persistant database whom the website calls upon to store or retrieve information
 
-## Functionalities to be added
-* Follow/unfollow a user
-* Store user and memos within a database
-
-## Functionalities to be considered
-* Hashtag topic tracking
-* Query support for finding new memos or users
-* Discover page
-* Connect page
-* ME page (displays only memos made by you)
-* View a list of your followers
-* View a list of your follow-ings

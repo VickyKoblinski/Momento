@@ -1,5 +1,53 @@
-<form name="login" method="post" id="auth-reg" action="/posting">
-    <textarea name="post" cols="50" rows="5"></textarea> <br>
-    <input type="submit">
 
-</form>
+
+<textarea rows="5" cols="50" id="post_text"></textarea> <br />
+<input type="submit"  id="post_bttn" value="Post" onclick="postdata(); return false;"> </input>
+
+
+
+
+
+
+        <script>
+
+function postdata()
+{
+
+    $.ajax({
+        type: "POST",
+        dataType: "text",
+        url: "/posting",
+        data: {post: $("#post_text").val()},
+        cache: false,
+        success: function(results)
+        {
+            var obj = jQuery.parseJSON(results);
+            var usr = obj.poster;
+            var msg = obj.msg;
+            var date = obj.date;
+
+
+            $("div#memo").prepend('<div class="outer"><div class="inner">' +
+                    '<a href=' + usr + '>'+
+                    '<div id="fbox" class="user">' +
+                    usr +
+                    '</div></a></div>' + msg + '<br><br>' +
+                    '<font size=1>'+date+'</font></div>');
+            $(".outer").first().hide().slideDown(800);
+
+            $(".outer").last().slideUp(800, function() { $(this).remove(); });
+            $('textarea').val('');
+
+            //inc post count
+            var val = $('div#myMemos').text();
+            $('div#myMemos').text(parseInt(val)+1);
+
+
+}
+    });
+
+}
+        </script>
+
+
+

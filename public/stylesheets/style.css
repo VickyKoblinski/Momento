@@ -1,5 +1,4 @@
 body {
-    padding: 25px 50px;
     font: 12px Verdana, Geneva, sans-serif;
     color:#033E6B;
 }
@@ -8,24 +7,133 @@ a {
     color: #0B61A4;
 }
 
+a.bg {
+    color: #0B61A4;
+}
+
+h4{
+    text-shadow:0 0 100px #BDB76B;
+    color: #FFFFE0;
+    font:40px;
+
+}
+
 h1 {
-    /*font-size:40px;*/
-    font: 40px Georgia;
+
+    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+    color: white;
+    font: 40px Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
 }
 
 h2 {
-    /*color: #A65F00;*/
-    /*font-size:30px;*/
     font:30px Georgia;
 }
 
 h3 {
-    /*color: #A65F00;*/
-    /*font-size:20px;*/
     font:20px Georgia;
 }
 
 
-.myTable { background-color:#FFFFE0;border-collapse:collapse; }
+.myTable { background-color:#FFFFE0;border-collapse:collapse; width:100% }
 .myTable th { background-color:#BDB76B;color:white; }
 .myTable td, .myTable th { padding:5px;border:1px solid #BDB76B; vertical-align:top }
+.memo { }
+.memo td, .memo th {border:0px}
+
+
+
+
+
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0));
+}
+
+
+
+#top, #bottom, #left, #right {
+    background: #a5ebff;
+    position: fixed;
+}
+#left, #right {
+    top: 0; bottom: 0;
+    width: 25%;
+}
+#left { left: 0; }
+#right { right: 0; }
+
+#top, #bottom {
+    left: 0; right: 0;
+    height: 15px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }
+
+#left2, #right2, #top2, #bottom2 {
+    background:#E9C494;
+    position: fixed;
+}
+#left2, #right2 {
+    top:0; bottom: 0;
+    width: 20%;
+}
+#left2 { left: 0; }
+#right2 { right: 0; }
+#top2, #bottom2 {
+    left: 0; right: 0;
+    height: 7px;
+}
+#top2 { top: 0; }
+#bottom2 { bottom: 0; }
+
+
+
+div.user {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color:#BDB76B;
+    border-style:solid;
+    border-width:1px;
+    padding:5px;
+    align: center;
+    box-shadow: 3px 3px 4px #BDB76B;
+
+}
+
+div.user2 {
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-color:#969043;
+    border-style:solid;
+    border-width:1px;
+    padding:5px;
+    align: center;
+
+}
+
+
+div.outer{
+    background-color:#FFFFE0;
+    border:1px solid;
+    border-color:#BDB76B;
+    padding:10px;
+    box-shadow:3px 3px 4px #BDB76B;
+
+}
+
+div.inner{
+    float:left;padding-right:10px
+}
+
+textarea{
+    resize:none
+}

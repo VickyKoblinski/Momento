@@ -10,33 +10,37 @@ exports.reg = function(req,res){
             p1 = req.body.password1,
             p2 = req.body.password2;
 
-
     //Make sure all strings are valid
     if(ws(u) && ws(fn) && ws(ln) && ws(e) && ws(p1) && ws(p2)){
 
         //Check if the username is taken
+        userlib.userExists(u,function(exists){
+               if(exists){
+                   index.setError('This username is already taken');
+               }
 
-        if(userlib.findUser(u)){
-            index.setError('This username is already taken')
-        }
+                else{
+                   //Do the passwords match?
+                   if(p1 === p2){
 
-        else {
-            //Do the passwords match?
-            if(p1 === p2){
+                       //Add the user to the database!
+                       userlib.addUser(u,fn,ln,e,p1);
 
-                //Add the user to the database!
-                userlib.addUser(u,fn,ln,e,p1);
+                       //Log the user in
+                       req.session.user = u;
 
-                //Log the user in
-                req.session.user = u;
+                       //Redirect to the homepage
+                       setTimeout(function() {
+                           res.redirect('/');
+                       }, 800);
 
-                //Redirect to the homepage
-                res.redirect('/');
+                   } else {
+                       index.setError("Your passwords don't match")
+                   }
+               }
 
-            } else {
-                index.setError("Your passwords don't match")
-            }
-        }
+        })
+
     }
 
 
